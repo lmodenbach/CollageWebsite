@@ -22,12 +22,16 @@ d3.csv("Business/Collages.csv").then((importedData) => {
 //get collage title
     var path = window.location.pathname;
     var page = path.split("/").pop();
-    console.log(page);    
-
-    var collageTitle = "";
+    var pageArray = page.split(".");
+    var squashCollageTitle = pageArray[0];
+    var collageTitle = squashCollageTitle.replace(/([A-Z])/g, ' $1').trim() 
+        
 //populate page title using d3
     d3.select("title")
     .text(collageTitle);
+
+//get current option selected
+    
 
 //define dropdown function
     function filterPage() {
@@ -45,27 +49,6 @@ d3.csv("Business/Collages.csv").then((importedData) => {
         else {
             var linkTitle = userSelect.split(" ").join("");
             window.location.href = "../" + linkTitle + ".html"; 
-            // if (d3.event != null) {
-            //     d3.event.preventDefault();
-            // }
-
-//show selection on select
-            //   d3.select("#dropdown")
-            //   .selectAll("option")
-            //   .data(collage_titles)
-            //   .enter()
-            //   .append("option")
-            //   .text(function (title) { 
-            //         return title;
-            //   });
-
-//populate page title using d3
-            // console.log(userSelect);
-            // d3.select("title")
-            // .text(userSelect);  
-            
-//
-
         }   
     }
 });

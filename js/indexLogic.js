@@ -33,33 +33,7 @@ d3.csv("Business/Collages.csv").then((importedData) => {
 //redirect page
         var userSelect = d3.select("#dropdown option:checked").text(); 
 
-        if (userSelect === "Home")
-            window.location.href = "../index.html";
-
-        else {
-            var linkTitle = userSelect.split(" ").join("");
-            window.location.href = "../" + linkTitle + ".html"; 
-            // if (d3.event != null) {
-            //     d3.event.preventDefault();
-            // }
-
-//show selection on select
-            //   d3.select("#dropdown")
-            //   .selectAll("option")
-            //   .data(collage_titles)
-            //   .enter()
-            //   .append("option")
-            //   .text(function (title) { 
-            //         return title;
-            //   });
-
-//populate page title using d3
-            // console.log(userSelect);
-            // d3.select("title")
-            // .text(userSelect);  
-            
-//
-
-        }   
+        var linkTitle = userSelect.split(" ").join("");
+        window.location.href = "../" + linkTitle + ".html";        
     }
 });
