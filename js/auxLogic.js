@@ -3,6 +3,13 @@ d3.csv("Business/Collages.csv").then((importedData) => {
     var data = importedData; 
     var collage_titles =  data.map((row) => row.TITLE);
 
+//get collage title
+var path = window.location.pathname;
+var page = path.split("/").pop();
+var pageArray = page.split(".");
+var squashCollageTitle = pageArray[0];
+var collageTitle = squashCollageTitle.replace(/([A-Z])/g, ' $1').trim();
+
 //populate dropdown menu using d3
     collage_titles.unshift("Home");
     
@@ -13,25 +20,16 @@ d3.csv("Business/Collages.csv").then((importedData) => {
     .append("option")
     .text(function (title) { 
         return title;
-    });
+    })
+    .attr("selected", false); //function (title) { return title === collageTitle; });
 
 //set up listener for drop down menu
     var dropdownMenu = d3.selectAll("#dropdown");
-    dropdownMenu.on("change", filterPage);
- 
-//get collage title
-    var path = window.location.pathname;
-    var page = path.split("/").pop();
-    var pageArray = page.split(".");
-    var squashCollageTitle = pageArray[0];
-    var collageTitle = squashCollageTitle.replace(/([A-Z])/g, ' $1').trim() 
+    dropdownMenu.on("change", filterPage); 
         
 //populate page title using d3
     d3.select("title")
     .text(collageTitle);
-
-//get current option selected
-    
 
 //define dropdown function
     function filterPage() {
