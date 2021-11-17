@@ -21,7 +21,9 @@ var collageTitle = squashCollageTitle.replace(/([A-Z])/g, ' $1').trim();
     .text(function (title) { 
         return title;
     })
-    .attr("selected", false); //function (title) { return title === collageTitle; });
+    .property("selected", function (title) { 
+        return title === collageTitle; 
+    });
 
 //set up listener for drop down menu
     var dropdownMenu = d3.selectAll("#dropdown");
