@@ -8,11 +8,11 @@ d3.csv("Business/Collages.csv").then((importedData) => {
     .text("Home");
 
 //populate dropdown menu using d3
-    collage_titles.unshift("Home");
+    var dropDownTitles = collage_titles.unshift("Home");
     
     d3.select("#dropdown")
     .selectAll("option")
-    .data(collage_titles)
+    .data(dropDownTitles)
     .enter()
     .append("option")
     .text(function (title) { 

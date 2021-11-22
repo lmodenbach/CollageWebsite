@@ -4,18 +4,23 @@ d3.csv("Business/Collages.csv").then((importedData) => {
     var collage_titles =  data.map((row) => row.TITLE);
 
 //get collage title
-var path = window.location.pathname;
-var page = path.split("/").pop();
-var pageArray = page.split(".");
-var squashCollageTitle = pageArray[0];
-var collageTitle = squashCollageTitle.replace(/([A-Z])/g, ' $1').trim();
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    var pageArray = page.split(".");
+    var squashCollageTitle = pageArray[0];
+    var collageTitle = ""; 
+        collage_titles.forEach(el => {
+            if (el.replace(" ", "") === squashCollageTitle) {
+                collageTitle = el;
+            }
+          }); 
 
 //populate dropdown menu using d3
-    collage_titles.unshift("Home");
+    var dropDownTitles = collage_titles.unshift("Home");
     
     d3.select("#dropdown")
     .selectAll("option")
-    .data(collage_titles)
+    .data(dropDownTitles)
     .enter()
     .append("option")
     .text(function (title) { 
