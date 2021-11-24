@@ -1,15 +1,24 @@
 //create dataset and read collage titles
 d3.csv("Business/Collages.csv").then((importedData) => {
     var data = importedData; 
-    var collage_titles =  data.map((row) => row.TITLE);
+    var collage_titles = data.map((row) => row.TITLE);
 
 //populate page title using d3
     d3.select("title")
     .text("Home");
 
-//populate dropdown menu using d3
-    var dropDownTitles = collage_titles.unshift("Home");
+//populate image title
     
+
+//populate image
+    d3.select("#homeImage")
+      .append("img")
+      .attr("src", "media/WarmDreams.jpg"); 
+
+//populate dropdown menu using d3
+    collage_titles.unshift("Home");
+    var dropDownTitles = collage_titles;
+
     d3.select("#dropdown")
     .selectAll("option")
     .data(dropDownTitles)
@@ -18,6 +27,8 @@ d3.csv("Business/Collages.csv").then((importedData) => {
     .text(function (title) { 
         return title;
     });
+
+    collage_titles.shift();
 
 //set up listener for drop down menu
     var dropdownMenu = d3.selectAll("#dropdown");

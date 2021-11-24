@@ -3,20 +3,28 @@ d3.csv("Business/Collages.csv").then((importedData) => {
     var data = importedData; 
     var collage_titles =  data.map((row) => row.TITLE);
 
+//populate image
+    d3.select("#collageImage")
+    .append("img")
+    .attr("src", "media/WarmDreams.jpg");
+
 //get collage title
     var path = window.location.pathname;
     var page = path.split("/").pop();
     var pageArray = page.split(".");
     var squashCollageTitle = pageArray[0];
+    // console.log(pageArray[0]);
     var collageTitle = ""; 
+    //console.log(collageTitle);
         collage_titles.forEach(el => {
-            if (el.replace(" ", "") === squashCollageTitle) {
+            if (el.replaceAll(" ", "") === squashCollageTitle) {
                 collageTitle = el;
             }
           }); 
 
 //populate dropdown menu using d3
-    var dropDownTitles = collage_titles.unshift("Home");
+    collage_titles.unshift("Home");
+    var dropDownTitles = collage_titles;
     
     d3.select("#dropdown")
     .selectAll("option")
@@ -29,6 +37,8 @@ d3.csv("Business/Collages.csv").then((importedData) => {
     .property("selected", function (title) { 
         return title === collageTitle; 
     });
+
+    collage_titles.shift();
 
 //set up listener for drop down menu
     var dropdownMenu = d3.selectAll("#dropdown");
