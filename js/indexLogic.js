@@ -3,12 +3,13 @@ d3.csv("Business/Collages.csv").then((importedData) => {
     var data = importedData; 
     var collage_titles = data.map((row) => row.TITLE);
 
-//populate page title using d3
+//populate tab title using d3
     d3.select("title")
     .text("Home");
 
-//populate image title
-    
+//populate page title
+    d3.select("#pageTitle")
+      .html(`<h2><b>Welcome To My World!</b></h2><br><br>`);  
 
 //populate image
     d3.select("#homeImage")
