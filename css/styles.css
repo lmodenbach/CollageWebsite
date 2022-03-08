@@ -4,12 +4,12 @@ div.collageImage {
     margin-right: auto 
 }
 
-/*Code for curtain sourced from codepen: https://codepen.io/musgrove/pen/gbXxGm "CSS Curtains Effect" by Michael Musgrove*/
+/*Code for curtain sourced from codepen: https://codepen.io/musgrove/pen/gbXxGm "CSS Curtains Effect" by Michael Musgrove accessed 3/8/22*/
 
 #theatre {
     border: inset black 10px;
-    height: 300px;
-    width: 80%;
+    height: 500px;
+    width: 100%;
     margin: 2em auto;
     text-align: center;
     line-height: 120px;
@@ -71,3 +71,5 @@ div#theatre:hover #curtain-right {
     left: 49%;
     transform: rotate(25deg) skew(15deg,5deg);
 }
+
+/*end codepen curtain code*/
