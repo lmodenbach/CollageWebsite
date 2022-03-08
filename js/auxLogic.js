@@ -14,7 +14,7 @@ d3.csv("Business/Collages.csv").then((importedData) => {
                 collageTitle = el;
             }
           }); 
-
+1
 //populate image
     d3.select("#collageImage")
       .append("img")
