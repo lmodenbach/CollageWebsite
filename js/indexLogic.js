@@ -9,7 +9,7 @@ d3.csv("Business/Collages.csv").then((importedData) => {
 
 //populate page title
     d3.select("#pageTitle")
-      .html(`<h2><b>Welcome To My World!</b></h2><br><br>`);  
+      .html(`<h1><b>Welcome To My World!</b></h1><br><br>`);  
 
 //populate image
     d3.select("#homeImage")

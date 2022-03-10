@@ -68,7 +68,7 @@ div#theatre:hover #curtain-right {
 
 /*end codepen curtain code*/
  
-/*stars code*/
+/*codepen stars code*/
 
 @keyframes move-background {
     from {
@@ -121,7 +121,7 @@ div#theatre:hover #curtain-right {
       left: 0;
       right: 0;
       display: block;
-        z-index: 0;
+        z-index: -1;
   }
   
   .twinkling{
@@ -133,7 +133,7 @@ div#theatre:hover #curtain-right {
       right: 0;
       top: 0;
       bottom: 0;
-      z-index: 2;
+      z-index: -1;
       
       -moz-animation:move-background 70s linear infinite;
     -ms-animation:move-background 70s linear infinite;
@@ -152,7 +152,7 @@ div#theatre:hover #curtain-right {
       right: 0;
       top: 0;
       bottom: 0;
-      z-index: 3;
+      z-index: -1;
   
      -moz-animation:move-background 150s linear infinite;
     -ms-animation:move-background 150s linear infinite;
@@ -162,3 +162,15 @@ div#theatre:hover #curtain-right {
   }
 
   /*end stars code*/
+
+  #pageTitle {
+      position: relative;
+      z-index: 10;
+      color: rgb(233, 136, 136);
+  }
+
+  #selectorTitle {
+    position: relative;
+    z-index: 10;
+    color: rgb(233, 136, 136);
+}
