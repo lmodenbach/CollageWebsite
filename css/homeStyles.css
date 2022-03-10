@@ -3,7 +3,7 @@
 #theatre {
     border: inset black 10px;
     height: 500px;
-    width: 100%;
+    width: 90%;
     margin: 2em auto;
     text-align: center;
     line-height: 120px;
@@ -167,10 +167,19 @@ div#theatre:hover #curtain-right {
       position: relative;
       z-index: 10;
       color: rgb(233, 136, 136);
+      font-family: fantasy;
   }
 
   #selectorTitle {
     position: relative;
     z-index: 10;
     color: rgb(233, 136, 136);
+    font-family: fantasy;
+}
+
+  #announcement {
+    position: relative;
+    z-index: 10;
+    color: rgb(233, 136, 136);
+    font-family: fantasy;
 }

@@ -14,7 +14,11 @@ d3.csv("Business/Collages.csv").then((importedData) => {
 //populate image
     d3.select("#homeImage")
       .append("img")
-      .attr("src", "media/WarmDreams.jpg"); 
+      .attr("src", "media/WarmDreams.jpg");
+      
+//populate announcement
+    d3.select("#announcement")
+      .html(`<h3><b>Announcements:</b></h3><br><h4>Better images and further improvements to come!</h4><br><br><br>`);
 
 //populate dropdown menu using d3
     collage_titles.unshift("Home");
