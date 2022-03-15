@@ -14,13 +14,16 @@ d3.csv("Business/Collages.csv").then((importedData) => {
                 collageTitle = el;
             }
           }); 
-1
+
 //populate image
     d3.select("#collageImage")
       .append("img")
       .attr("src", "media/" + squashCollageTitle + ".jpg");
       console.log(squashCollageTitle);
 
+//populate background
+    d3.select("body.style")
+        .attr("background-image", "media/" + squashCollageTitle + "BackImage.jpg");  
 
 //populate dropdown menu using d3
     collage_titles.unshift("Home");
