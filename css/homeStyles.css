@@ -68,7 +68,7 @@ div#theatre:hover #curtain-right {
 
 /*end codepen curtain code*/
  
-/*codepen stars code*/
+/*Code for night sky sourced/adapted from codepen: https://codepen.io/agoodwin/pen/NMJoER "pure CSS twinkling stars background" by Anastasia Goodwin accessed 3/15/22*/
 
 @keyframes move-background {
     from {
@@ -121,7 +121,7 @@ div#theatre:hover #curtain-right {
       left: 0;
       right: 0;
       display: block;
-        z-index: -1;
+        z-index: 0;
   }
   
   .twinkling{
@@ -133,7 +133,7 @@ div#theatre:hover #curtain-right {
       right: 0;
       top: 0;
       bottom: 0;
-      z-index: -1;
+      z-index: 2;
       
       -moz-animation:move-background 70s linear infinite;
     -ms-animation:move-background 70s linear infinite;
@@ -152,7 +152,7 @@ div#theatre:hover #curtain-right {
       right: 0;
       top: 0;
       bottom: 0;
-      z-index: -1;
+      z-index: 3;
   
      -moz-animation:move-background 150s linear infinite;
     -ms-animation:move-background 150s linear infinite;
@@ -160,6 +160,7 @@ div#theatre:hover #curtain-right {
     -webkit-animation:move-background 150s linear infinite;
     animation:move-background 150s linear infinite;
   }
+  
 
   /*end stars code*/
 
