@@ -19,11 +19,10 @@ d3.csv("Business/Collages.csv").then((importedData) => {
     d3.select("#collageImage")
       .append("img")
       .attr("src", "media/" + squashCollageTitle + ".jpg");
-      console.log(squashCollageTitle);
 
-//populate background
-    d3.select("body.style")
-        .attr("background-image", "media/" + squashCollageTitle + "BackImage.jpg");  
+//populate background image
+    var imageURL = "url(media/" + squashCollageTitle + "BackImage.jpg)";
+    d3.select("body").style("background-image", imageURL);      
 
 //populate dropdown menu using d3
     collage_titles.unshift("Home");
