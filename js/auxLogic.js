@@ -22,8 +22,7 @@ d3.csv("Business/Collages.csv").then((importedData) => {
       console.log(squashCollageTitle);
 
 //populate background image
-    var backSquashCollageTitle = squashCollageTitle.replaceAll("'", "\'");
-    var imageURL = "url(media/" + backSquashCollageTitle + "BackImage.jpg)";
+    var imageURL = "url(media/" + squashCollageTitle + "BackImage.jpg)";
     console.log(imageURL);
     d3.select("body").style("background-image", imageURL);      
 
